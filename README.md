@@ -53,7 +53,11 @@ Open your browser and visit `http://localhost:5000`.
 
 As incredibly basic as this application is, there are still some strange design choices, most of which can be explained by the fact that this was first and foremost intended to be a fun way to get started with Elm, which I hadn't had the opportunity to try out before.
 
-In fact, the original implementation of this (without the frontend) was about 50 lines of python as a quick half hour proof of concept (can be run using `❯ python markov_original.py <username> <max generated tweet length> <num tweets to use as sample size>`). The intention was to just port it all to Elm with a simple boilerplate frontend.
+In fact, the original implementation of this (without the frontend) was about 50 lines of python as a quick half hour proof of concept, which you can try with the following:
+```
+❯ python markov_original.py <username> <max generated tweet length> <num tweets to use as sample size>
+```
+The intention was to just port it all to Elm with a simple boilerplate frontend.
 
 The reason any backend at all is required is that Twitter's API doesn't support CORS (even for a "client-only" app!), and figuring out the correct browser settings for each browser to get around this was way more work than just wiring up Flask and my original python solution using the [python-twitter](https://github.com/bear/python-twitter) library (especially because the Elm/Flask boilerplate I found came with such pretty templates).
 

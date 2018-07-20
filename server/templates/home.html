@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<hr>
+<div id="username-container"></div>
+{% endblock %}
+
+{% block js %}
+<script src="/static/dist/js/main.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var node = document.getElementById('username-container');
+  var app = Elm.Main.embed(node);
+</script>
+{% endblock %}

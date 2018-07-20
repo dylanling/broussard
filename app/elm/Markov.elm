@@ -1,4 +1,4 @@
-module Markov exposing ( MarkovChain, markovChain, mergeChains, generate )
+module Markov exposing ( MarkovChain, markovChain, add, generate )
 
 import Dict
 import List.Nonempty
@@ -24,11 +24,11 @@ markovChain lists =
     , transitions = transitions
     }
 
-mergeChains : 
+add : 
   MarkovChain comparable 
   -> MarkovChain comparable 
   -> MarkovChain comparable
-mergeChains a b =
+add a b =
   { startingValues = (.startingValues a) ++ (.startingValues b)
   , transitions = mergeTransitions (.transitions a) (.transitions b)
   }
